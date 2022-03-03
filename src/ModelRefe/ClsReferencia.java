@@ -15,9 +15,9 @@ public class ClsReferencia {
     private String nomeDoLivro;
     private String cidade;
     private String editora;
-    private float ano;
+    private int ano;
 
-    public ClsReferencia(String ultinoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, float ano) {
+    public ClsReferencia(String ultimoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, int ano) {
         this.ultimoNome = ultimoNome;
         this.primeiroNome = primeiroNome;
         this.nomeDoLivro = nomeDoLivro;
@@ -30,8 +30,8 @@ public class ClsReferencia {
         return ultimoNome;
     }
 
-    public void setUltiMonome(String ultiMonome) {
-        this.ultimoNome = ultiMonome;
+    public void setUltimoNome(String ultimoNome) {
+        this.ultimoNome = ultimoNome;
     }
 
     public String getPrimeiroNome() {
@@ -66,12 +66,13 @@ public class ClsReferencia {
         this.editora = editora;
     }
 
-    public float getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(float ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
+    
     
 }

@@ -37,8 +37,12 @@ public class ClsDAOReferencia {
         conexao = this.GetConexao();
         try {
             PreparedStatement declaracao = conexao.prepareStatement(sql);
-            declaracao.setInt(1, codigo);
-            declaracao.setString(2, nome);
+            declaracao.setString(1, ultimoNome);
+            declaracao.setString(2, primeiroNome);
+            declaracao.setString(3, nomeDoLivro);
+            declaracao.setString(4, cidade);
+            declaracao.setString(5, editora);
+            declaracao.setFloat(6, ano);
             declaracao.execute();
             resposta = true;
         } catch (SQLException ex) {
@@ -96,22 +100,22 @@ public class ClsDAOReferencia {
 
     public ArrayList pesquisarTodos() {
         String sql = "select * from cliente order by nome";
-        ArrayList clientes = new ArrayList();
+        ArrayList Referencia = new ArrayList();
         conexao = this.GetConexao();
-        String nome;
-        int codigo;
+        int ano;
+        String editora;
         try {
             PreparedStatement declaracao = conexao.prepareStatement(sql);
             ResultSet rs = declaracao.executeQuery();
             while (rs.next()) {
-                codigo = rs.getInt("codigo");
-                nome = rs.getString("nome");
-                ClsCliente objCliente = new ClsCliente(codigo, nome);
-                clientes.add(objCliente);
+                editora= rs.getString("editora");
+                ano = rs.getInt("ano");
+                ClsReferencia objReferencia = new ClsReferencia(editora,ano);
+                Referencia.add(objReferencia);
             }
         } catch (SQLException ex) {
             System.out.println("Exceção: " + ex);
         }
-        return clientes;
+        return Referencia;
     }
 }
