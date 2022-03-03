@@ -9,16 +9,16 @@ package ModelRefe;
  *
  * @author andre
  */
-public class ClsRferencia {
-    private String ultiMonome;
+public class ClsReferencia {
+    private String ultimoNome;
     private String primeiroNome;
     private String nomeDoLivro;
     private String cidade;
     private String editora;
     private float ano;
 
-    public ClsRferencia(String ultiMonome, String primeiroNome, String nomeDoLivro, String cidade, String editora, float ano) {
-        this.ultiMonome = ultiMonome;
+    public ClsReferencia(String ultinoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, float ano) {
+        this.ultimoNome = ultimoNome;
         this.primeiroNome = primeiroNome;
         this.nomeDoLivro = nomeDoLivro;
         this.cidade = cidade;
@@ -26,12 +26,12 @@ public class ClsRferencia {
         this.ano = ano;
     }
 
-    public String getUltiMonome() {
-        return ultiMonome;
+    public String getUltimoNome() {
+        return ultimoNome;
     }
 
     public void setUltiMonome(String ultiMonome) {
-        this.ultiMonome = ultiMonome;
+        this.ultimoNome = ultiMonome;
     }
 
     public String getPrimeiroNome() {
