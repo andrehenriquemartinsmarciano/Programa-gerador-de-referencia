@@ -26,6 +26,10 @@ public class ClsReferencia {
         this.ano = ano;
     }
 
+    public ClsReferencia(String editora, int ano) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getUltimoNome() {
         return ultimoNome;
     }
