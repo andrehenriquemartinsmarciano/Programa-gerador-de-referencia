@@ -1,14 +1,36 @@
-
 package ViewRefe;
 
+import DaoRefe.ClsDAOReferencia;
+import ModelRefe.ClsReferencia;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 
 public class Pro_String extends javax.swing.JFrame {
-
 
     public Pro_String() {
         initComponents();
         this.setTitle("Referencias");
         this.setLocationRelativeTo(null);
+        this.desabilitarCampos();
+        this.limparCampos();
+        this.lstReferencia.setModel(model);
+    }
+
+    public void listarClientes() {
+        ArrayList<ClsReferencia> referencias = new ArrayList();
+        ClsDAOReferencia objDAOReferencia = new ClsDAOReferencia();
+        referencias = objDAOReferencia.pesquisarTodos();
+        DefaultListModel modelo = new DefaultListModel();
+        modelo.clear();
+        for (ClsReferencia referencia : referencias) {
+            String ultimoNome = referencia.getUltimoNome();
+            String primeiroNome = referencia.getPrimeiroNome();
+            String nomeDoLivro = referencia.getNomeDoLivro();
+            String cidade = referencia.getCidade();
+            String editora = referencia.getEditora();
+            modelo.addElement(ultimoNome +":" + primeiroNome+":"+nomeDoLivro+":"+cidade+":"+editora);
+        }
+        this.lstReferencia.setModel(modelo);
     }
 
     /**
@@ -444,7 +466,7 @@ public class Pro_String extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMontarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMontarActionPerformed
-            //1.Inicializar as variáveis
+        //1.Inicializar as variáveis
         String ultimoNome = this.txtUltimoNome.getText();
         String primeiroNome = this.txtPrimeiroNome.getText();
         String nomeLivro = this.txtNomeLivro.getText();
@@ -452,26 +474,26 @@ public class Pro_String extends javax.swing.JFrame {
         String editora = this.txtEditora.getText();
         String ano = this.txtAno.getText();
         //2.Preencher os campos de resposta
-        String referencia="";
-        referencia += ultimoNome+", ";
-        referencia += primeiroNome+". ";
-        referencia += nomeLivro+". ";
-        referencia += cidade+": ";
-        referencia += editora+", ";
-        referencia += ano+".";
+        String referencia = "";
+        referencia += ultimoNome + ", ";
+        referencia += primeiroNome + ". ";
+        referencia += nomeLivro + ". ";
+        referencia += cidade + ": ";
+        referencia += editora + ", ";
+        referencia += ano + ".";
         //3.Criar os vetores para capturar os dados
         String[] vetor = referencia.split("[.]");
-        String nomeCompleto=vetor[0];
-        String cidadeEditoraAno=vetor[2];
+        String nomeCompleto = vetor[0];
+        String cidadeEditoraAno = vetor[2];
         String[] vetor2 = cidadeEditoraAno.split(",");
         String[] vetor3 = vetor2[0].split(":");
         String[] vetor4 = nomeCompleto.split(",");
-        int noCaracteres=referencia.length();
-        String vAno=vetor2[1];
-        String vEditora= vetor3[1];
+        int noCaracteres = referencia.length();
+        String vAno = vetor2[1];
+        String vEditora = vetor3[1];
         //4.Exibir os dados
         this.txtReferencia.setText(referencia);
-        this.txtNomeCompleto.setText(vetor4[1]+" "+vetor4[0]);
+        this.txtNomeCompleto.setText(vetor4[1] + " " + vetor4[0]);
         this.txtAnoReferencia.setText(vAno);
         this.txtEditoraReferencia.setText(vEditora);
         this.txtNumCaracteres.setText(String.valueOf(noCaracteres));
@@ -502,18 +524,18 @@ public class Pro_String extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNumCaracteresActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-    this.txtUltimoNome.setText("");
-    this.txtPrimeiroNome.setText("");
-    this.txtNomeLivro.setText("");
-    this.txtCidade.setText("");
-    this.txtEditora.setText("");
-    this.txtAno.setText("");
-    this.txtReferencia.setText("");
-    this.txtNomeCompleto.setText("");
-    this.txtAnoReferencia.setText("");
-    this.txtNumCaracteres.setText("");
-    this.txtEditoraReferencia.setText("");
-    
+        this.txtUltimoNome.setText("");
+        this.txtPrimeiroNome.setText("");
+        this.txtNomeLivro.setText("");
+        this.txtCidade.setText("");
+        this.txtEditora.setText("");
+        this.txtAno.setText("");
+        this.txtReferencia.setText("");
+        this.txtNomeCompleto.setText("");
+        this.txtAnoReferencia.setText("");
+        this.txtNumCaracteres.setText("");
+        this.txtEditoraReferencia.setText("");
+
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
