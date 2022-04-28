@@ -1,23 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ModelRefe;
 
-/**
- *
- * @author andre
- */
 public class ClsReferencia {
+
+    private int id;
     private String ultimoNome;
     private String primeiroNome;
     private String nomeDoLivro;
     private String cidade;
     private String editora;
-    private int ano;
+    private Integer ano;
 
-    public ClsReferencia(String ultimoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, int ano) {
+    public ClsReferencia(int id, String ultimoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, Integer ano) {
+        this.id = id;
         this.ultimoNome = ultimoNome;
         this.primeiroNome = primeiroNome;
         this.nomeDoLivro = nomeDoLivro;
@@ -28,6 +22,26 @@ public class ClsReferencia {
 
     public ClsReferencia(String editora, int ano) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ClsReferencia(String ultimoNome, String primeiroNome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ClsReferencia(int codigo, String nome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ClsReferencia() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUltimoNome() {
@@ -70,13 +84,16 @@ public class ClsReferencia {
         this.editora = editora;
     }
 
-    public int getAno() {
+    public Integer getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(Integer ano) {
         this.ano = ano;
     }
-    
-    
+
+    public void setAno(float ano) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
