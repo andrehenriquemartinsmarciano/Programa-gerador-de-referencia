@@ -9,9 +9,8 @@ public class Pro_String extends javax.swing.JFrame {
 
     ClsReferencia[] vetorReferencia = new ClsReferencia[5];
     DefaultListModel model = new DefaultListModel();
-    float valorTotal = 0;
+    float anoReferencia = 0;
     int ctReferencia = 0;
-
 
     public Pro_String() {
         initComponents();
@@ -570,26 +569,17 @@ public class Pro_String extends javax.swing.JFrame {
         Obj_referencia.setCidade(Cidade);
         Obj_referencia.setEditora(editora);
         //Colocando o objeto no vetor
-         vetorReferencia[ctReferencia] = Obj_referencia;
+        vetorReferencia[ctReferencia] = Obj_referencia;
         //Criando uma string que será o item do vetor model
         //que está ligado na lista
         String itemLista = "";
-        itemLista = String.valueOf(codigo);
-        itemLista += ("-" + marca);
-        itemLista += ("-" + modelo);
-        itemLista += ("-" + cor);
-        itemLista += ("-" + placa);
-        itemLista += ("-" + String.valueOf(valor));
+        itemLista = String.valueOf(ano);
+        itemLista += ("-" + primeiroNome);
+        itemLista += ("-" + ultimoNome);
+        itemLista += ("-" + nomeLivro);
+        itemLista += ("-" + Cidade);
+        itemLista += ("-" + editora);
         model.addElement(itemLista);
-        //Atualizo os dados
-        this.valorTotal = valorTotal + valor;
-        this.ctCarros++;
-        if (ctCarros == 3) {
-            this.btnIncluir.setEnabled(false);
-        }
-        //Exibir os dados
-        this.lblNumCarros.setText(String.valueOf(ctCarros));
-        this.lblValorTotal.setText(String.valueOf(valorTotal));
         //Limpar os dados de entrada
         this.limparCampos();
     }//GEN-LAST:event_btnSalvarActionPerformed
@@ -611,7 +601,7 @@ public class Pro_String extends javax.swing.JFrame {
         String nomeLivro = vetor[2];
         String cidade = vetor[3];
         String editora = vetor[4];
-        String ano = vetor[4];
+        String ano = vetor[5];
         this.txtUltimoNome.setText(ultimoNome);
         this.txtPrimeiroNome.setText(primeiroNome);
         this.txtNomeLivro.setText(nomeLivro);

@@ -33,7 +33,7 @@ public class ClsReferencia {
     }
 
     public ClsReferencia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public int getId() {
@@ -93,7 +93,7 @@ public class ClsReferencia {
     }
 
     public void setAno(float ano) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ 
     }
 
 }
