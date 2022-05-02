@@ -32,7 +32,7 @@ public class ClsDAOReferencia {
         String nomeDoLivro = objrefe.getNomeDoLivro();
         String cidade = objrefe.getCidade();
         String editora = objrefe.getEditora();
-        float ano = objrefe.getAno();
+        int ano = objrefe.getAno();
         boolean resposta = false;
         conexao = this.GetConexao();
         try {

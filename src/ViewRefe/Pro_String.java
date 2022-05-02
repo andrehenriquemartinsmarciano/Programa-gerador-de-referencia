@@ -559,15 +559,17 @@ public class Pro_String extends javax.swing.JFrame {
         String nomeLivro = this.txtNomeLivro.getText();
         String Cidade = this.txtCidade.getText();
         String editora = this.txtEditora.getText();
-        float ano = Float.valueOf(this.txtAno.getText());
+        int ano =Integer.valueOf(this.txtAno.getText());
         //Criar o Obj_Carro
-        ClsReferencia Obj_referencia = new ClsReferencia();
+        ClsReferencia Obj_referencia = new ClsReferencia(ultimoNome,primeiroNome,nomeLivro,editora,Cidade,ano);
+        ClsDAOReferencia objDAOReferencia = new ClsDAOReferencia();
         Obj_referencia.setAno(ano);
         Obj_referencia.setPrimeiroNome(primeiroNome);
         Obj_referencia.setUltimoNome(ultimoNome);
         Obj_referencia.setNomeDoLivro(nomeLivro);
         Obj_referencia.setCidade(Cidade);
         Obj_referencia.setEditora(editora);
+       objDAOReferencia.inserir(Obj_referencia);
         //Colocando o objeto no vetor
         vetorReferencia[ctReferencia] = Obj_referencia;
         //Criando uma string que será o item do vetor model

@@ -2,7 +2,6 @@ package ModelRefe;
 
 public class ClsReferencia {
 
-    private int id;
     private String ultimoNome;
     private String primeiroNome;
     private String nomeDoLivro;
@@ -10,8 +9,8 @@ public class ClsReferencia {
     private String editora;
     private Integer ano;
 
-    public ClsReferencia(int id, String ultimoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, Integer ano) {
-        this.id = id;
+    public ClsReferencia(String ultimoNome, String primeiroNome, String nomeDoLivro, String cidade, String editora, Integer ano) {
+
         this.ultimoNome = ultimoNome;
         this.primeiroNome = primeiroNome;
         this.nomeDoLivro = nomeDoLivro;
@@ -33,15 +32,7 @@ public class ClsReferencia {
     }
 
     public ClsReferencia() {
-        
-    }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUltimoNome() {
@@ -93,7 +84,7 @@ public class ClsReferencia {
     }
 
     public void setAno(float ano) {
- 
+
     }
 
 }
